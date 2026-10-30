@@ -1,42 +1,164 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex">
-<title>몽골 제국 단톡방</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>몽골 채팅 샘플</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <style>
-:root { --bg:#111214; --strip:#1e1f22; --line:#33353a; --fg:#f0f0f2; --muted:#a3a5ad; --accent:#7ea6f0;
-  --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif; color-scheme:dark; }
-* { box-sizing:border-box; }
-body { margin:0; background:var(--bg); color:var(--fg); font:400 16px/1.65 var(--font); }
-main { max-width:860px; margin:0 auto; padding:28px 16px 56px; display:grid; gap:24px; }
-h1 { font-size:26px; line-height:1.3; margin:0 0 8px; }
-h2 { font-size:18px; margin:0 0 6px; }
-p { margin:0; color:var(--muted); }
-video { width:100%; aspect-ratio:16/9; background:#000; display:block; border-radius:6px; }
-ol { list-style:none; margin:10px 0 0; padding:0; display:grid; gap:2px; }
-button { all:unset; box-sizing:border-box; cursor:pointer; display:grid; grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px; width:100%; padding:7px 8px; }
-button:hover { background:var(--strip); }
-button:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
-.t,.ko { color:var(--muted); }
-.t { font-variant-numeric:tabular-nums; }
-footer { border-top:1px solid var(--line); padding-top:14px; font-size:13px; overflow-wrap:anywhere; display:grid; gap:6px; }
-@media (max-width:620px) { button { grid-template-columns:40px minmax(0,1fr); } .ko { grid-column:2; } }
+/* 영상과 같은 세계: 검은 바탕에 대화 띠. 비교 영상이 주인공이라 나머지는 조용하게 */
+:root {
+  --bg: #000; --strip: #1b1a1f; --line: #33323a; --fg: #f0f0f2; --muted: #a3a2aa; --accent: #6ea4e8;
+  --font: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--font); }
+main { max-width: 1120px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 32px; }
+h1 { font-size: 28px; line-height: 1.3; margin: 0 0 6px; font-weight: 700; text-wrap: balance; }
+h2 { font-size: 19px; margin: 0 0 12px; font-weight: 700; }
+p { margin: 0; color: var(--muted); max-width: 65ch; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+figcaption { font-weight: 500; }
+figcaption small { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 6px; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); display: block; }
+#now { background: var(--strip); padding: 10px 14px; min-height: 76px; }
+#now b { display: block; font-weight: 500; }
+#now span { color: var(--muted); font-size: 14px; }
+.wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 14px; }
+ul.notes { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 70ch; }
+ol.lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+ol.lines button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px; width: 100%; padding: 7px 10px; }
+ol.lines button:hover, ol.lines button.on { background: var(--strip); }
+ol.lines button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.t { color: var(--muted); font-variant-numeric: tabular-nums; }
+.ko { color: var(--muted); }
+@media (max-width: 620px) {
+  ol.lines button { grid-template-columns: 40px minmax(0, 1fr); }
+  .ko { grid-column: 2; }
+}
 </style>
-</head>
-<body>
 <main>
-<header>
-<h1>몽골 제국 단톡방</h1>
-<p>몽골 제국 역사를 단톡방 대화로 풀어낸 15분짜리 영어 영상입니다. 소리를 켜고 봐 주세요. 끝까지 안 봐도 괜찮습니다. 어디가 재밌었는지, 어디서 끄고 싶었는지만 알려 주세요.</p>
-</header>
-<video id="v" src="mongol.mp4" poster="thumb.jpg" controls playsinline preload="metadata"></video>
-<section>
-<h2>첫 1분 대사 뜻</h2>
-<p>영어가 어려우면 여기를 보세요. 줄을 누르면 그 장면으로 갑니다.</p>
-<ol>
+  <header>
+    <h1>몽골 제국 단톡방, 완성본 판정</h1>
+    <p>국기 아바타와 새 썸네일이 들어간 최종본입니다. 아래 1분 비교로 본보기와 같은 느낌인지 보고, 그 밑의 전체 영상과 제목·설명까지 본 뒤 합격 여부를 말씀해 주세요. 영어 재미는 판단하지 않으셔도 됩니다.</p>
+  </header>
+
+  <section class="pair" aria-label="영상 비교">
+    <figure>
+      <figcaption>우리 샘플 <small>몽골 제국 · 15분 편의 앞 1분</small></figcaption>
+      <video id="ours" src="sample.mp4" controls playsinline preload="metadata"></video>
+      <div id="now" aria-live="off"><b>재생하면 지금 줄의 뜻이 여기에 나옵니다.</b><span></span></div>
+    </figure>
+    <figure>
+      <figcaption>본보기 <small>Server History WW2 · 292만 회 · 앞 1분</small></figcaption>
+      <video id="ref" src="reference.mp4" controls playsinline preload="metadata"></video>
+      <p>남의 영상을 잘라 넣은 비교용 페이지입니다. 링크를 밖으로 공유하지 마세요.</p>
+    </figure>
+  </section>
+
+  <section>
+    <h2>완성본 전체 15분 15초</h2>
+    <p style="margin-bottom:10px">올릴 파일 그대로입니다. 페이지 용량 때문에 5토막으로 나눴고, 한 토막이 끝나면 다음 토막이 이어서 나옵니다.</p>
+    <div class="pair">
+      <figure>
+        <video id="full" src="full0.mp4" controls playsinline preload="metadata" poster="thumb.jpg"></video>
+        <figcaption id="fullnow">전체 0:00</figcaption>
+      </figure>
+      <div>
+        <p style="margin-bottom:8px">먼저 봐 주실 곳</p>
+        <ol class="lines" id="jumps">
+<li><button type="button" data-g="111"><span class="t">1:51</span><span class="en">돈 소리</span><span class="ko">cash 효과음이 괜찮은지 귀로 확인</span></button></li>
+<li><button type="button" data-g="232"><span class="t">3:52</span><span class="en">교황 농담</span><span class="ko">who else would be destroying muslims. 역사 맥락 농담, 위험 판단</span></button></li>
+<li><button type="button" data-g="318"><span class="t">5:18</span><span class="en">«no blood»</span><span class="ko">민감한 줄, 수치 묘사는 없음</span></button></li>
+<li><button type="button" data-g="441"><span class="t">7:21</span><span class="en">7분 이탈 장치</span><span class="ko">키이우 함락 카드</span></button></li>
+<li><button type="button" data-g="572"><span class="t">9:32</span><span class="en">귀위크 편지 사진</span><span class="ko">새로 자른 사진</span></button></li>
+<li><button type="button" data-g="632"><span class="t">10:32</span><span class="en">«hello everyone in islam»</span><span class="ko">훌라구 농담, 위험 판단</span></button></li>
+<li><button type="button" data-g="642"><span class="t">10:42</span><span class="en">바그다드 함락</span><span class="ko">음악을 끊고 시스템 줄만</span></button></li>
+<li><button type="button" data-g="781"><span class="t">13:01</span><span class="en">13분 이탈 장치</span><span class="ko">read your pins</span></button></li>
+<li><button type="button" data-g="904"><span class="t">15:04</span><span class="en">끝</span><span class="ko">입력창 정적 엔딩</span></button></li>
+        </ol>
+      </div>
+    </div>
+    <h2 style="margin-top:24px">올릴 제목·설명·썸네일</h2>
+    <img src="thumb.jpg" alt="썸네일: 채팅 두 줄, Mongols (Kublai): RULE. ONE. / Egypt: lol" style="max-width:420px;width:100%;display:block;margin-bottom:12px">
+    <pre style="white-space:pre-wrap;overflow-wrap:anywhere;margin:0;background:var(--strip);padding:12px 14px;font:400 14px/1.6 var(--font)">TITLE: IF THE MONGOL EMPIRE WAS A DISCORD CHAT (HISTORICALLY ACCURATE)
+DESCRIPTION:
+The Mongol Empire as one giant group chat, from Genghis Khan&#x27;s one rule to the last horde.
+Covers: 1206 unification, Khwarazm and the mailman rule, Kyiv, Baghdad, Kublai&#x27;s fleets, and the last standoff in 1480.
+Historically accurate-ish: every event happened, the chat didn&#x27;t.
+
+0:00 1206 · One rule
+0:25 1209
+1:13 1211
+1:36 1215. Zhongdu has fallen.
+1:48 1218
+3:34 1221
+4:23 1223
+5:31 1227
+6:21 1234
+6:47 1237
+7:21 6 December 1240. Kyiv has fallen.
+7:27 1241
+8:56 December 1241
+9:22 1246
+9:46 1254
+10:22 1258
+11:02 1259
+11:50 3 September 1260
+12:15 1264
+12:36 1266
+13:08 1279
+13:29 1281
+14:08 1346
+14:23 1368
+14:32 1480
+
+Music: Kevin MacLeod (incompetech.com), licensed under CC BY 4.0: Fluffing a Duck, Funkorama, Hitman, March of the Spoons, Parisian, Sneaky Snitch, Volatile Reaction.
+Images via Wikimedia Commons: YuanEmperorAlbumGenghisPortrait (Public domain); Mongolian Empire Letter from Guyug Khaan to Pope Innocent IV (Copy) (35321741520) (CC0); Jalal al-Din Khwarazm-Shah crossing the rapid Indus river, escaping Chinggis Khan and his army (Public domain); YuanEmperorAlbumKhubilaiPortrait (Public domain); Battle of Legnica1241-From Legend of Saint Hedwig (Public domain); Mōko Shūrai Ekotoba 2 (Public domain); Mongol Conquest of Baghdad (Public domain); Karakorum Silver Tree (Public domain); Facial Chronicle - b.16, p. 462 - Great standing on the Ugra (Public domain).
+
+HASHTAGS: #history #mongols #genghiskhan #historymemes #medieval
+</pre>
+  </section>
+
+  <section>
+    <h2>잰 숫자</h2>
+    <div class="wrap"><table>
+      <thead><tr><th>항목</th><th>본보기</th><th>우리 샘플</th></tr></thead>
+      <tbody>
+        <tr><td>메시지 속도</td><td>분당 약 40개(편 전체)</td><td>첫 1분 36개, 편 전체 분당 34개</td></tr>
+        <tr><td>1분 안의 화면 전환(같은 기준)</td><td>42회</td><td>42회</td></tr>
+        <tr><td>음량</td><td>-11.8 LUFS(첫 1분)</td><td>-14.0 LUFS(첫 1분), 편 전체 -14.3</td></tr>
+        <tr><td>목소리</td><td>없음</td><td>없음</td></tr>
+        <tr><td>메시지 팝 소리</td><td>있음(약 0.09초, 900Hz대)</td><td>있음(약 0.12초, 500Hz대)</td></tr>
+        <tr><td>소리 높낮이 분포 440·587·1760·2347Hz(전체 대비 dB, 같은 계산)</td><td>-15.2 · -19.2 · -27.2 · -24.6</td><td>-16.6 · -19.1 · -25.3 · -25.1</td></tr>
+        <tr><td>첫 1분에 음악이 끊기는 곳(소리 -40dB 아래 0.3초 이상)</td><td>3곳, 0.35~0.65초</td><td>0곳</td></tr>
+        <tr><td>편 전체 0.8초 넘는 무음(-40dB 아래)</td><td>본보기 6편: 2~54곳, 영상의 0.3~6.4%</td><td>55곳, 영상의 8.6%, 최장 3.0초</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>본보기와 다른 점, 아직 임시인 것</h2>
+    <ul class="notes">
+      <li>첫 줄을 «왜 내 서버에 초원에서 온 놈이 있어»로 바꿨습니다. 본보기가 첫 메시지부터 갈등으로 시작해서 맞췄습니다.</li>
+      <li>연도는 메시지 시각 자리가 아니라 1209 같은 큰 카드로 보여 줍니다.</li>
+      <li>짤은 남의 밈을 쓰지 않고 우리가 그린 그림입니다(FLUX.1-schnell, Apache 2.0).</li>
+      <li>소리는 전부 바꿨습니다. 메시지 소리와 효과음은 무료 번들(MIT)과 CC0, 밈 목소리는 Fish 무료 모델입니다. 이전 샘플과 다르게 들립니다.</li>
+      <li>음악은 Kevin MacLeod의 Hitman, Sneaky Snitch, Funkorama, March of the Spoons, Fluffing a Duck(CC BY)입니다. 본보기가 쓰는 곡과는 다르고, 올릴 때 설명란에 출처를 적습니다.</li>
+      <li>지도는 우리가 만든 지도입니다.</li>
+      <li>화자 아바타는 국기입니다. 지금 나라가 이어받은 경우 그 국기를 쓰고, 이어받은 나라가 없는 금·서하만 옛 문양, 공식 안내와 역사가 줄만 이모지입니다.</li>
+      <li>첫 1분에는 음악이 끊기지 않고 본보기는 3번 끊깁니다. 편 뒤쪽에서는 일부러 음악을 멈춘 긴 구간이 많아, 0.8초 넘는 무음 비율이 본보기 6편의 최고치(6.4%)보다 높습니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>우리 샘플 대사</h2>
+    <p style="margin-bottom:10px">줄을 누르면 그 자리로 이동합니다.</p>
+    <ol class="lines" id="lines">
 <li><button type="button" data-t="0.0"><span class="t">0:00</span><span class="en">Jin: why is there a guy from the grass in my server</span><span class="ko">왜 내 서버에 초원에서 온 놈이 있어</span></button></li>
 <li><button type="button" data-t="2.47"><span class="t">0:02</span><span class="en">Mongols (Genghis): i beat all the other tribes</span><span class="ko">다른 부족 다 이겼거든</span></button></li>
 <li><button type="button" data-t="5.53"><span class="t">0:05</span><span class="en">Mongols (Genghis): so now there&#x27;s one server</span><span class="ko">그래서 이제 서버는 하나야</span></button></li>
@@ -76,20 +198,60 @@ footer { border-top:1px solid var(--line); padding-top:14px; font-size:13px; ove
 <li><button type="button" data-t="57.8"><span class="t">0:57</span><span class="en">Mongols (Genghis): my horse is swimming</span><span class="ko">내 말 지금 수영 중이야</span></button></li>
 <li><button type="button" data-t="59.17"><span class="t">0:59</span><span class="en">Jin: LMAOOOO</span><span class="ko">ㅋㅋㅋㅋㅋ</span></button></li>
 <li><button type="button" data-t="59.97"><span class="t">0:59</span><span class="en">Song: lmaooo</span><span class="ko">ㅋㅋㅋㅋ</span></button></li>
-</ol>
-</section>
-<footer>
-<p>Music: Kevin MacLeod (incompetech.com), licensed under CC BY 4.0: Fluffing a Duck, Funkorama, Hitman, March of the Spoons, Parisian, Sneaky Snitch, Volatile Reaction.</p>
-<p>Images via Wikimedia Commons: YuanEmperorAlbumGenghisPortrait (Public domain); Mongolian Empire Letter from Guyug Khaan to Pope Innocent IV (Copy) (35321741520) (CC0); Jalal al-Din Khwarazm-Shah crossing the rapid Indus river, escaping Chinggis Khan and his army (Public domain); YuanEmperorAlbumKhubilaiPortrait (Public domain); Battle of Legnica1241-From Legend of Saint Hedwig (Public domain); Mōko Shūrai Ekotoba 2 (Public domain); Mongol Conquest of Baghdad (Public domain); Karakorum Silver Tree (Public domain); Facial Chronicle - b.16, p. 462 - Great standing on the Ugra (Public domain).</p>
-</footer>
+    </ol>
+  </section>
 </main>
 <script>
-const v = document.getElementById("v");
-document.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
-  v.currentTime = Number(b.dataset.t);
-  v.play().catch(() => {});
-  v.scrollIntoView({ block: "nearest" });
+const LINES = [{"t": 0.0, "글": "Jin: why is there a guy from the grass in my server", "뜻": "왜 내 서버에 초원에서 온 놈이 있어"}, {"t": 2.47, "글": "Mongols (Genghis): i beat all the other tribes", "뜻": "다른 부족 다 이겼거든"}, {"t": 5.53, "글": "Mongols (Genghis): so now there's one server", "뜻": "그래서 이제 서버는 하나야"}, {"t": 7.1, "글": "Mongols (Genghis): and one rule", "뜻": "규칙도 하나"}, {"t": 8.13, "글": "📌 RULE 1: DO NOT KILL THE ENVOYS", "뜻": "공지 고정: 규칙 1. 사신을 죽이지 마라"}, {"t": 11.33, "글": "Song: what does he want", "뜻": "쟤 뭘 원하는데"}, {"t": 12.57, "글": "Jin: he wants us to not kill his mailmen", "뜻": "자기 우체부 죽이지 말래"}, {"t": 14.57, "글": "Song: who kills a mailman", "뜻": "누가 우체부를 죽여"}, {"t": 15.9, "글": "Mongols (Genghis): exactly", "뜻": "그러니까"}, {"t": 17.17, "글": "Mongols (Genghis): very easy rule / nobody is ever going to have a problem with it", "뜻": "아주 쉬운 규칙이야 / 이걸로 문제 될 사람 아무도 없을 거야"}, {"t": 21.03, "글": "Khwarazm: what happens if someone breaks it", "뜻": "어기면 어떻게 돼"}, {"t": 22.93, "글": "Mongols (Genghis): why", "뜻": "왜"}, {"t": 23.57, "글": "Khwarazm: no reason", "뜻": "그냥"}, {"t": 25.87, "글": "1209", "뜻": "연도 카드: 1209년"}, {"t": 27.0, "글": "Mongols (Genghis): hi western xia", "뜻": "안녕 서하"}, {"t": 28.1, "글": "(지도)", "뜻": "지도: 몽골이 서하로 쳐들어감"}, {"t": 32.1, "글": "Song: 👀", "뜻": "(지켜보는 눈 이모지)"}, {"t": 32.7, "글": "Western Xia: oh no", "뜻": "아 안돼"}, {"t": 33.43, "글": "Western Xia: @Jin", "뜻": "금나라 호출"}, {"t": 33.73, "글": "Western Xia: @Jin", "뜻": "금나라 호출"}, {"t": 34.03, "글": "Western Xia: @Jin", "뜻": "금나라 호출"}, {"t": 34.33, "글": "Western Xia: HELP", "뜻": "도와줘"}, {"t": 35.03, "글": "Jin: it is to our advantage when our enemies attack each other", "뜻": "적끼리 싸우면 우리한테 이득이지"}, {"t": 37.93, "글": "Western Xia: i'm your neighbor", "뜻": "나 네 이웃이야"}, {"t": 39.17, "글": "Jin: and now you're a busy neighbor", "뜻": "그래서 이제 바쁜 이웃이네"}, {"t": 40.93, "글": "Song: jin that's cold", "뜻": "금나라 너무한데"}, {"t": 42.1, "글": "Jin: that's policy", "뜻": "이게 정책이야"}, {"t": 43.17, "글": "Mongols (Genghis): ok we've never attacked a walled city", "뜻": "우리 성 있는 도시 처음 쳐 봐"}, {"t": 45.23, "글": "Mongols (Genghis): how do you do this", "뜻": "이거 어떻게 하는 거야"}, {"t": 46.53, "글": "Mongols (Genghis): idea / we dam the river and flood them", "뜻": "아이디어 / 강을 막아서 물로 잠그자"}, {"t": 49.77, "글": "Western Xia: you're doing WHAT", "뜻": "뭘 한다고"}, {"t": 51.0, "글": "Mongols (Genghis): update", "뜻": "중간 보고"}, {"t": 51.77, "글": "Mongols (Genghis): the dam broke", "뜻": "둑이 터졌어"}, {"t": 52.83, "글": "Western Xia: so my city is flooded", "뜻": "그럼 우리 도시가 잠긴 거네"}, {"t": 54.23, "글": "Mongols (Genghis): my camp is flooded", "뜻": "우리 진영이 잠겼어"}, {"t": 56.9, "글": "Western Xia: YOUR camp", "뜻": "너네 진영이?"}, {"t": 57.8, "글": "Mongols (Genghis): my horse is swimming", "뜻": "내 말 지금 수영 중이야"}, {"t": 59.17, "글": "Jin: LMAOOOO", "뜻": "ㅋㅋㅋㅋㅋ"}, {"t": 59.97, "글": "Song: lmaooo", "뜻": "ㅋㅋㅋㅋ"}];
+const ours = document.getElementById("ours"), ref = document.getElementById("ref");
+const now = document.getElementById("now"), btns = [...document.querySelectorAll("#lines button")];
+let cur = -1;
+function tick() {
+  let i = -1;
+  for (let k = 0; k < LINES.length && LINES[k].t <= ours.currentTime; k++) i = k;
+  if (i === cur) return;
+  if (cur >= 0) btns[cur].classList.remove("on");
+  cur = i;
+  if (i < 0) return;
+  btns[i].classList.add("on");
+  now.querySelector("b").textContent = LINES[i]["글"];
+  now.querySelector("span").textContent = LINES[i]["뜻"];
+}
+const PARTS = [185.888, 184.467, 179.333, 184.1, 181.0];
+const full = document.getElementById("full"), fullnow = document.getElementById("fullnow");
+let part = 0;
+const partStart = i => PARTS.slice(0, i).reduce((a, b) => a + b, 0);
+function playAt(i, t) {
+  const seek = () => { full.currentTime = t; full.play().catch(() => {}); };
+  if (i !== part) {
+    part = i;
+    full.src = `full${i}.mp4`;
+    full.addEventListener("loadedmetadata", seek, { once: true });
+  } else seek();
+}
+full.addEventListener("ended", () => { if (part + 1 < PARTS.length) playAt(part + 1, 0); });
+full.addEventListener("timeupdate", () => {
+  const s = Math.floor(partStart(part) + full.currentTime);
+  fullnow.textContent = `전체 ${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")} · ${part + 1}/${PARTS.length}토막`;
+});
+document.querySelectorAll("#jumps button").forEach(b => b.addEventListener("click", () => {
+  let g = Number(b.dataset.g), i = 0;
+  while (i + 1 < PARTS.length && g >= PARTS[i]) { g -= PARTS[i]; i++; }
+  playAt(i, g);
+  full.scrollIntoView({ block: "nearest" });
+}));
+full.addEventListener("play", () => { ours.pause(); ref.pause(); });
+ours.addEventListener("play", () => full.pause());
+ref.addEventListener("play", () => full.pause());
+ours.addEventListener("timeupdate", tick);
+ours.addEventListener("seeked", tick);
+ours.addEventListener("play", () => ref.pause());
+ref.addEventListener("play", () => ours.pause());
+btns.forEach(b => b.addEventListener("click", () => {
+  ours.currentTime = Number(b.dataset.t);
+  ours.play().catch(() => {});
+  ours.scrollIntoView({ block: "nearest" });
 }));
 </script>
-</body>
-</html>
+
+</body></html>
