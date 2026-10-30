@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>몽골 제국 단톡방</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root { --bg:#111214; --strip:#1e1f22; --line:#33353a; --fg:#f0f0f2; --muted:#a3a5ad; --accent:#7ea6f0;
+  --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif; color-scheme:dark; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:400 16px/1.65 var(--font); }
+main { max-width:860px; margin:0 auto; padding:28px 16px 56px; display:grid; gap:24px; }
+h1 { font-size:26px; line-height:1.3; margin:0 0 8px; }
+h2 { font-size:18px; margin:0 0 6px; }
+p { margin:0; color:var(--muted); }
+video { width:100%; aspect-ratio:16/9; background:#000; display:block; border-radius:6px; }
+ol { list-style:none; margin:10px 0 0; padding:0; display:grid; gap:2px; }
+button { all:unset; box-sizing:border-box; cursor:pointer; display:grid; grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px; width:100%; padding:7px 8px; }
+button:hover { background:var(--strip); }
+button:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
+.t,.ko { color:var(--muted); }
+.t { font-variant-numeric:tabular-nums; }
+footer { border-top:1px solid var(--line); padding-top:14px; font-size:13px; overflow-wrap:anywhere; display:grid; gap:6px; }
+@media (max-width:620px) { button { grid-template-columns:40px minmax(0,1fr); } .ko { grid-column:2; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>몽골 제국 단톡방</h1>
+<p>몽골 제국 역사를 단톡방 대화로 풀어낸 15분짜리 영어 영상입니다. 소리를 켜고 봐 주세요. 끝까지 안 봐도 괜찮습니다. 어디가 재밌었는지, 어디서 끄고 싶었는지만 알려 주세요.</p>
+</header>
+<video id="v" src="mongol.mp4" poster="thumb.jpg" controls playsinline preload="metadata"></video>
+<section>
+<h2>첫 1분 대사 뜻</h2>
+<p>영어가 어려우면 여기를 보세요. 줄을 누르면 그 장면으로 갑니다.</p>
+<ol>
+<li><button type="button" data-t="0.0"><span class="t">0:00</span><span class="en">Jin: why is there a guy from the grass in my server</span><span class="ko">왜 내 서버에 초원에서 온 놈이 있어</span></button></li>
+<li><button type="button" data-t="2.47"><span class="t">0:02</span><span class="en">Mongols (Genghis): i beat all the other tribes</span><span class="ko">다른 부족 다 이겼거든</span></button></li>
+<li><button type="button" data-t="5.53"><span class="t">0:05</span><span class="en">Mongols (Genghis): so now there&#x27;s one server</span><span class="ko">그래서 이제 서버는 하나야</span></button></li>
+<li><button type="button" data-t="7.1"><span class="t">0:07</span><span class="en">Mongols (Genghis): and one rule</span><span class="ko">규칙도 하나</span></button></li>
+<li><button type="button" data-t="8.13"><span class="t">0:08</span><span class="en">📌 RULE 1: DO NOT KILL THE ENVOYS</span><span class="ko">공지 고정: 규칙 1. 사신을 죽이지 마라</span></button></li>
+<li><button type="button" data-t="11.33"><span class="t">0:11</span><span class="en">Song: what does he want</span><span class="ko">쟤 뭘 원하는데</span></button></li>
+<li><button type="button" data-t="12.57"><span class="t">0:12</span><span class="en">Jin: he wants us to not kill his mailmen</span><span class="ko">자기 우체부 죽이지 말래</span></button></li>
+<li><button type="button" data-t="14.57"><span class="t">0:14</span><span class="en">Song: who kills a mailman</span><span class="ko">누가 우체부를 죽여</span></button></li>
+<li><button type="button" data-t="15.9"><span class="t">0:15</span><span class="en">Mongols (Genghis): exactly</span><span class="ko">그러니까</span></button></li>
+<li><button type="button" data-t="17.17"><span class="t">0:17</span><span class="en">Mongols (Genghis): very easy rule / nobody is ever going to have a problem with it</span><span class="ko">아주 쉬운 규칙이야 / 이걸로 문제 될 사람 아무도 없을 거야</span></button></li>
+<li><button type="button" data-t="21.03"><span class="t">0:21</span><span class="en">Khwarazm: what happens if someone breaks it</span><span class="ko">어기면 어떻게 돼</span></button></li>
+<li><button type="button" data-t="22.93"><span class="t">0:22</span><span class="en">Mongols (Genghis): why</span><span class="ko">왜</span></button></li>
+<li><button type="button" data-t="23.57"><span class="t">0:23</span><span class="en">Khwarazm: no reason</span><span class="ko">그냥</span></button></li>
+<li><button type="button" data-t="25.87"><span class="t">0:25</span><span class="en">1209</span><span class="ko">연도 카드: 1209년</span></button></li>
+<li><button type="button" data-t="27.0"><span class="t">0:27</span><span class="en">Mongols (Genghis): hi western xia</span><span class="ko">안녕 서하</span></button></li>
+<li><button type="button" data-t="28.1"><span class="t">0:28</span><span class="en">(지도)</span><span class="ko">지도: 몽골이 서하로 쳐들어감</span></button></li>
+<li><button type="button" data-t="32.1"><span class="t">0:32</span><span class="en">Song: 👀</span><span class="ko">(지켜보는 눈 이모지)</span></button></li>
+<li><button type="button" data-t="32.7"><span class="t">0:32</span><span class="en">Western Xia: oh no</span><span class="ko">아 안돼</span></button></li>
+<li><button type="button" data-t="33.43"><span class="t">0:33</span><span class="en">Western Xia: @Jin</span><span class="ko">금나라 호출</span></button></li>
+<li><button type="button" data-t="33.73"><span class="t">0:33</span><span class="en">Western Xia: @Jin</span><span class="ko">금나라 호출</span></button></li>
+<li><button type="button" data-t="34.03"><span class="t">0:34</span><span class="en">Western Xia: @Jin</span><span class="ko">금나라 호출</span></button></li>
+<li><button type="button" data-t="34.33"><span class="t">0:34</span><span class="en">Western Xia: HELP</span><span class="ko">도와줘</span></button></li>
+<li><button type="button" data-t="35.03"><span class="t">0:35</span><span class="en">Jin: it is to our advantage when our enemies attack each other</span><span class="ko">적끼리 싸우면 우리한테 이득이지</span></button></li>
+<li><button type="button" data-t="37.93"><span class="t">0:37</span><span class="en">Western Xia: i&#x27;m your neighbor</span><span class="ko">나 네 이웃이야</span></button></li>
+<li><button type="button" data-t="39.17"><span class="t">0:39</span><span class="en">Jin: and now you&#x27;re a busy neighbor</span><span class="ko">그래서 이제 바쁜 이웃이네</span></button></li>
+<li><button type="button" data-t="40.93"><span class="t">0:40</span><span class="en">Song: jin that&#x27;s cold</span><span class="ko">금나라 너무한데</span></button></li>
+<li><button type="button" data-t="42.1"><span class="t">0:42</span><span class="en">Jin: that&#x27;s policy</span><span class="ko">이게 정책이야</span></button></li>
+<li><button type="button" data-t="43.17"><span class="t">0:43</span><span class="en">Mongols (Genghis): ok we&#x27;ve never attacked a walled city</span><span class="ko">우리 성 있는 도시 처음 쳐 봐</span></button></li>
+<li><button type="button" data-t="45.23"><span class="t">0:45</span><span class="en">Mongols (Genghis): how do you do this</span><span class="ko">이거 어떻게 하는 거야</span></button></li>
+<li><button type="button" data-t="46.53"><span class="t">0:46</span><span class="en">Mongols (Genghis): idea / we dam the river and flood them</span><span class="ko">아이디어 / 강을 막아서 물로 잠그자</span></button></li>
+<li><button type="button" data-t="49.77"><span class="t">0:49</span><span class="en">Western Xia: you&#x27;re doing WHAT</span><span class="ko">뭘 한다고</span></button></li>
+<li><button type="button" data-t="51.0"><span class="t">0:51</span><span class="en">Mongols (Genghis): update</span><span class="ko">중간 보고</span></button></li>
+<li><button type="button" data-t="51.77"><span class="t">0:51</span><span class="en">Mongols (Genghis): the dam broke</span><span class="ko">둑이 터졌어</span></button></li>
+<li><button type="button" data-t="52.83"><span class="t">0:52</span><span class="en">Western Xia: so my city is flooded</span><span class="ko">그럼 우리 도시가 잠긴 거네</span></button></li>
+<li><button type="button" data-t="54.23"><span class="t">0:54</span><span class="en">Mongols (Genghis): my camp is flooded</span><span class="ko">우리 진영이 잠겼어</span></button></li>
+<li><button type="button" data-t="56.9"><span class="t">0:56</span><span class="en">Western Xia: YOUR camp</span><span class="ko">너네 진영이?</span></button></li>
+<li><button type="button" data-t="57.8"><span class="t">0:57</span><span class="en">Mongols (Genghis): my horse is swimming</span><span class="ko">내 말 지금 수영 중이야</span></button></li>
+<li><button type="button" data-t="59.17"><span class="t">0:59</span><span class="en">Jin: LMAOOOO</span><span class="ko">ㅋㅋㅋㅋㅋ</span></button></li>
+<li><button type="button" data-t="59.97"><span class="t">0:59</span><span class="en">Song: lmaooo</span><span class="ko">ㅋㅋㅋㅋ</span></button></li>
+</ol>
+</section>
+<footer>
+<p>Music: Kevin MacLeod (incompetech.com), licensed under CC BY 4.0: Fluffing a Duck, Funkorama, Hitman, March of the Spoons, Parisian, Sneaky Snitch, Volatile Reaction.</p>
+<p>Images via Wikimedia Commons: YuanEmperorAlbumGenghisPortrait (Public domain); Mongolian Empire Letter from Guyug Khaan to Pope Innocent IV (Copy) (35321741520) (CC0); Jalal al-Din Khwarazm-Shah crossing the rapid Indus river, escaping Chinggis Khan and his army (Public domain); YuanEmperorAlbumKhubilaiPortrait (Public domain); Battle of Legnica1241-From Legend of Saint Hedwig (Public domain); Mōko Shūrai Ekotoba 2 (Public domain); Mongol Conquest of Baghdad (Public domain); Karakorum Silver Tree (Public domain); Facial Chronicle - b.16, p. 462 - Great standing on the Ugra (Public domain).</p>
+</footer>
+</main>
+<script>
+const v = document.getElementById("v");
+document.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+  v.currentTime = Number(b.dataset.t);
+  v.play().catch(() => {});
+  v.scrollIntoView({ block: "nearest" });
+}));
+</script>
+</body>
+</html>
